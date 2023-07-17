@@ -26,12 +26,13 @@ model Publication {
   id            Int      @id @default(autoincrement())
   image         String
   title         String
+  text          String
   dateToPublish DateTime
   published     Boolean
   socialMedia   String
   createdAt     DateTime @default(now())
   userId        Int
-  User User @relation(fields: [userId], references: [id])
+  User          User     @relation(fields: [userId], references: [id])
 
   @@map("publications")
 }
